@@ -17,6 +17,37 @@
   }
 }
 
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #eee;
+}
+
+.nav-links,
+.social-media-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-media-links {
+  gap: 12px;
+}
+
+.social-link {
+  display: inline-flex;
+  color: inherit;
+  font-size: 1.4rem;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  color: var(--accent);
+}
+
 .hero {
   position: relative;
 
