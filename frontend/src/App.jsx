@@ -5,6 +5,7 @@ import Booking from './pages/booking'
 import PressKit from './pages/press-kit'
 import Shows from './pages/shows'
 import Contact from './pages/contact'
+import SocialMedia from './components/social-media-links/social-media-links.component'
 
 function App() {
   return (
@@ -12,12 +13,15 @@ function App() {
     <h1>this is the dumpster site!</h1>
 
       {/* NavBar - will create a component of this later */}
-      <nav style={{ padding: '20px', background: '#eee' }}>
-        <Link to="/" style={{ marginRight: '15px' }}>Home</Link>
-        <Link to="/booking" style={{ marginRight: '15px' }}>Booking</Link>
-        <Link to="/press-kit" style={{ marginRight: '15px' }}>Press Kit</Link>
-        <Link to="/shows" style={{ marginRight: '15px' }}>Shows</Link>
-        <Link to="/contact">Contact</Link>
+      <nav className="nav-bar">
+        <div className="nav-links">
+          <Link to="/">Home</Link>
+          <Link to="/booking">Booking</Link>
+          <Link to="/press-kit">Press Kit</Link>
+          <Link to="/shows">Shows</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+        <SocialMedia />
       </nav>
 
       {/* Page content area */}
