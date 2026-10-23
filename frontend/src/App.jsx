@@ -1,17 +1,12 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/home'
 import Booking from './pages/booking'
 import PressKit from './pages/press-kit'
 import Shows from './pages/shows'
+import Contact from './pages/contact'
 
 function App() {
-  //const [count, setCount] = useState(0)
-
   return (
     <>
     <h1>this is the dumpster site!</h1>
@@ -22,6 +17,7 @@ function App() {
         <Link to="/booking" style={{ marginRight: '15px' }}>Booking</Link>
         <Link to="/press-kit" style={{ marginRight: '15px' }}>Press Kit</Link>
         <Link to="/shows" style={{ marginRight: '15px' }}>Shows</Link>
+        <Link to="/contact">Contact</Link>
       </nav>
 
       {/* Page content area */}
@@ -30,6 +26,7 @@ function App() {
         <Route path="/booking" element={<Booking />} />
         <Route path="/press-kit" element={<PressKit />} />
         <Route path="/shows" element={<Shows />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       {/* Footer - will create a component of this later */}
