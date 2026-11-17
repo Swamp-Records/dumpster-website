@@ -23,7 +23,21 @@
   justify-content: space-between;
   gap: 16px;
   padding: 16px 20px;
-  background: #eee;
+  background: white;
+  font-family: "Tagesschrift", system-ui;
+}
+
+.nav-brand {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.nav-brand img {
+  width: 120px;
+  height: 54px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .nav-links,
@@ -31,6 +45,28 @@
   display: flex;
   align-items: center;
   gap: 16px;
+}
+
+
+.nav-links a {
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+
+color: #0150AD;
+}
+
+.nav-links a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3em;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--accent);
 }
 
 .social-media-links {
