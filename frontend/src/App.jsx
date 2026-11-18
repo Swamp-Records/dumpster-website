@@ -1,5 +1,7 @@
 import './App.css'
 import { Routes, Route, Link, NavLink } from 'react-router-dom'
+import logo from './assets/dumpster-logo.webp'
+import footerPhoto from './assets/dumpster-footer.webp'
 import Home from './pages/home'
 import Booking from './pages/booking'
 import About from './pages/about'
@@ -12,10 +14,9 @@ function App() {
   return (
     <>
 
-      {/* NavBar - will create a component of this later */}
-      <nav className="nav-bar">
+      <nav className="nav-bar" aria-label="Main">
         <Link className="nav-brand" to="/" aria-label="Dumpster home">
-          <img src="/logo.png" alt="Dumpster" />
+          <img src={logo} alt="" width="480" height="147" />
         </Link>
         <div className="nav-links">
           <NavLink to="/about" end>about</NavLink>
@@ -35,10 +36,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
 
-      {/* Footer - will create a component of this later */}
-    
-      <footer>
-        <SocialMedia />
+      <footer className="site-footer">
+        <div className="site-footer-art">
+          <img src={footerPhoto} alt="" width="1437" height="359" loading="lazy" />
+          <SocialMedia />
+        </div>
       </footer>
     </>
   )

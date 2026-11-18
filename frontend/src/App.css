@@ -1,3 +1,25 @@
+@font-face {
+  font-family: 'Special Elite';
+  src: url('./assets/fonts/special-elite-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rubik Burned';
+  src: url('./assets/fonts/rubik-burned-uppercase.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+0020, U+0041-005A;
+}
+
+:root {
+  --typewriter: 'Special Elite', 'Courier New', monospace;
+  --brand-blue: #0150ad;
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -21,10 +43,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 16px 20px;
-  background: white;
-  font-family: "Tagesschrift", system-ui;
+  gap: 12px;
+  box-sizing: border-box;
+  min-height: clamp(58px, 6.65vw, 96px);
+  padding-inline: clamp(12px, 2.25vw, 36px) clamp(12px, 3.2vw, 48px);
+  background: #feffff;
+  font-family: var(--typewriter);
 }
 
 .nav-brand {
@@ -34,92 +58,155 @@
 }
 
 .nav-brand img {
-  width: 120px;
-  height: 54px;
-  object-fit: cover;
-  object-position: center;
+  display: block;
+  width: clamp(87px, 13.8vw, 199px);
+  height: auto;
 }
 
-.nav-links,
-.social-media-links {
+.nav-links {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: clamp(8px, 2.75vw, 40px);
 }
-
 
 .nav-links a {
-  color: inherit;
-  font-family: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brand-blue);
+  font-size: clamp(15px, 2.5vw, 36px);
+  font-weight: 400;
+  line-height: 1;
   text-decoration: none;
-
-color: #0150AD;
 }
 
+.nav-links a:hover,
 .nav-links a[aria-current="page"] {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.3em;
 }
 
-.nav-links a:hover,
-.nav-links a:focus-visible {
-  color: var(--accent);
+.nav-bar a:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.site-footer {
+  overflow: clip;
+  background: #fff;
+}
+
+.site-footer-art {
+  /* The minimum width keeps the 44px social targets from overlapping. */
+  --art-min-width: 560px;
+
+  position: relative;
+  width: max(100%, var(--art-min-width));
+  margin-inline-start: min(0px, calc((100% - var(--art-min-width)) * 0.27));
+}
+
+.site-footer-art img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .social-media-links {
-  gap: 12px;
+  /* Align the link centers to the three icons in the artwork. */
+  position: absolute;
+  top: 82%;
+  left: calc(42.07% - 22px);
+  right: calc(41.79% - 22px);
+  display: flex;
+  justify-content: space-between;
+  translate: 0 -50%;
 }
 
 .social-link {
-  display: inline-flex;
-  color: inherit;
-  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
 }
 
-.social-link:hover,
+.social-link:hover {
+  background: rgb(255 255 255 / 15%);
+}
+
 .social-link:focus-visible {
-  color: var(--accent);
+  outline: 2px solid #fff;
+  box-shadow: 0 0 0 4px #1d2126;
 }
 
-.hero {
+.home-hero {
   position: relative;
+  aspect-ratio: 16 / 9;
+  background: #36434d;
+}
 
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
+.home-hero-photo,
+.home-hero::before {
+  position: absolute;
+  inset: 0;
+}
+
+.home-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.home-hero::before {
+  z-index: 1;
+  background: rgb(85 106 126 / 41%);
+  content: '';
+}
+
+.home-hero-brand {
+  position: absolute;
+  z-index: 2;
+  top: 51.6%;
+  left: 8.5%;
+  width: 81.2%;
+  text-align: right;
+}
+
+.home-hero-brand h1 {
+  margin: 0;
+  color: #718daf;
+  /* The reference uses 200px type on a 1440px frame. */
+  font: 400 13.8889vw / 1 'Rubik Burned', sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  text-shadow: 0.023em 0.046em #1d2126;
+}
+
+.home-hero-brand p {
+  margin: clamp(7px, 1.15vw, 18px) 2.4% 0 0;
+  color: #fff;
+  font: 400 clamp(15px, 2.2vw, 32px) / 1.2 var(--typewriter);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 75%);
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    aspect-ratio: 4 / 5;
   }
 
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
+  .home-hero-photo {
+    object-position: 53% bottom;
   }
 
-  .framework,
-  .vite {
-    position: absolute;
+  .home-hero-brand {
+    top: 59.8%;
+    left: 5%;
+    width: 90%;
   }
 
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
+  .home-hero-brand h1 {
+    font-size: 15.5vw;
   }
 }
 

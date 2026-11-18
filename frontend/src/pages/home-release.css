@@ -1,0 +1,125 @@
+@font-face {
+  font-family: 'Trade Winds';
+  src: url('../assets/fonts/trade-winds-latin.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+.home-release {
+  --release-blue: #718daf;
+  --release-silver: #c9caca;
+
+  position: relative;
+  z-index: 3;
+  container-type: inline-size;
+  aspect-ratio: 1437 / 874;
+  background: linear-gradient(rgb(67 80 87 / 90%), rgb(67 80 87 / 90%)),
+    #435057 url('../assets/stardust-background.webp') center / cover;
+}
+
+.home-release-cord {
+  position: absolute;
+  top: -4cqw;
+  left: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.home-release-copy {
+  position: absolute;
+  top: 15.7cqw;
+  inset-inline: 47.25% 5.75%;
+  color: var(--release-blue);
+  font: 400 clamp(18px, 2.7778cqw, 44px) / 1 var(--typewriter);
+}
+
+.home-release-copy h2 {
+  margin: 1.1cqw 0 1.35cqw;
+  color: var(--release-silver);
+  font: 400 9.7222cqw / 1 'Trade Winds', Georgia, serif;
+  letter-spacing: 0;
+  text-shadow: 0.027em 0.034em var(--release-blue);
+}
+
+.home-release-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 44px;
+  margin-top: 10.8cqw;
+  padding-inline: 0.3em;
+  border: solid var(--release-blue);
+  border-width: clamp(4px, 0.59cqw, 9px) clamp(5px, 0.7cqw, 10px);
+  border-radius: 999px;
+  background: var(--release-silver);
+  color: var(--release-blue);
+  font-size: clamp(18px, 2.2222cqw, 36px);
+  min-width: 16.2cqw;
+  height: 4.3145cqw;
+  text-decoration: none;
+}
+
+.home-release-link:hover {
+  color: #435057;
+}
+
+.home-release-link:focus-visible {
+  outline: 3px solid var(--release-silver);
+  outline-offset: 4px;
+}
+
+.home-release-player {
+  position: absolute;
+  left: 4.55%;
+  bottom: 0;
+  width: 42.66%;
+  pointer-events: none;
+}
+
+.home-release-player img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.home-release-player .home-release-cover {
+  position: absolute;
+  top: 32.9%;
+  left: 30%;
+  width: 18.43%;
+  translate: -50% -50%;
+  rotate: -5deg;
+}
+
+@media (max-width: 600px) {
+  .home-release {
+    aspect-ratio: auto;
+    background-position: 43% center;
+  }
+
+  .home-release-copy {
+    position: relative;
+    inset: auto;
+    padding: max(44px, 13cqw) 1rem 0;
+  }
+
+  .home-release-copy h2 {
+    margin: 0.12em 0 0.18em;
+    font-size: 15.5cqw;
+  }
+
+  .home-release-link {
+    margin-top: 1.6rem;
+    padding-inline: 0.5em;
+  }
+
+  .home-release-player {
+    position: relative;
+    inset: auto;
+    width: min(80%, 390px);
+    margin: -11cqw auto 0;
+  }
+}
