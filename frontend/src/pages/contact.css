@@ -1,0 +1,148 @@
+.contact-page {
+  position: relative;
+  container-type: inline-size;
+  overflow: clip;
+  background:
+    linear-gradient(rgb(47 53 78 / 35%), rgb(47 53 78 / 35%)),
+    #384759 url('../assets/dumpster-contact-background.webp') center / cover no-repeat;
+}
+
+.contact-phone {
+  position: absolute;
+  top: 2.65cqw;
+  right: 0;
+  width: 21cqw;
+  height: auto;
+  pointer-events: none;
+}
+
+.contact-title {
+  position: relative;
+  margin: 0;
+  padding: 2.8cqw 13.2cqw 0 0;
+  color: var(--brand-blue);
+  font: 400 13.8889cqw / 1.06 'Rubik Burned', sans-serif;
+  letter-spacing: 0;
+  text-align: right;
+  text-shadow: 0.025em 0.025em #394759;
+}
+
+.contact-form {
+  --contact-border: max(3px, 0.4167cqw);
+
+  width: 57.5%;
+  margin: 4.78cqw 0 0 8.33cqw;
+  padding-bottom: 20.8cqw;
+  font-family: var(--typewriter);
+  letter-spacing: 0;
+}
+
+.contact-fields {
+  display: grid;
+  gap: 1.6cqw;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.contact-fields input,
+.contact-fields textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding-inline: max(12px, 1.35cqw);
+  border: var(--contact-border) solid var(--brand-blue);
+  border-radius: 4px;
+  background: #d9d9e0;
+  color: #252936;
+  font: 400 clamp(16px, 1.3889cqw, 22px) / 1.25 var(--typewriter);
+}
+
+.contact-fields input {
+  min-height: max(36px, 3.125cqw);
+}
+
+.contact-fields textarea {
+  min-height: 36.1cqw;
+  padding-block: max(12px, 1.1cqw);
+  resize: vertical;
+}
+
+.contact-fields input::placeholder,
+.contact-fields textarea::placeholder {
+  color: #4d4d53;
+  opacity: 1;
+}
+
+.contact-submit {
+  justify-self: center;
+  box-sizing: border-box;
+  min-width: max(120px, 14.2361cqw);
+  min-height: max(44px, 3.9583cqw);
+  margin-block-start: 2.2cqw;
+  margin-inline-end: 1.5cqw;
+  padding: 0.15em 0.7em 0;
+  border: var(--contact-border) solid var(--brand-blue);
+  border-radius: 999px;
+  background: #c5c5ce;
+  color: var(--brand-blue);
+  font: 400 clamp(18px, 2.0833cqw, 36px) / 1 var(--typewriter);
+  cursor: pointer;
+}
+
+.contact-submit:hover {
+  background: #d9d9e0;
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+}
+
+.contact-fields :focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.contact-status:not(:empty) {
+  width: fit-content;
+  margin: 0.75rem auto 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  background: #253146;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .contact-title {
+    padding-top: 7cqw;
+    font-size: 15.4cqw;
+  }
+
+  .contact-phone {
+    top: 7cqw;
+    width: 23cqw;
+  }
+
+  .contact-form {
+    width: calc(100% - 2rem);
+    margin: 1.5rem auto 0;
+    padding-bottom: max(72px, 16cqw);
+  }
+
+  .contact-fields {
+    gap: 14px;
+  }
+
+  .contact-fields input {
+    min-height: 44px;
+  }
+
+  .contact-fields textarea {
+    min-height: clamp(200px, 56cqw, 320px);
+  }
+
+  .contact-submit {
+    margin-inline-end: 0;
+  }
+}
