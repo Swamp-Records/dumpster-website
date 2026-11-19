@@ -32,7 +32,7 @@ export default function Home() {
         />
         <div className="home-release-copy">
           <p>New single:</p>
-          <h2 id="release-title">Stardust</h2>
+          <h2 id="release-title">STARDUST</h2>
           <p>out now!</p>
           <a
             className="home-release-link"

@@ -1,15 +1,24 @@
+@font-face {
+  font-family: 'Covered By Your Grace';
+  src: url('../assets/fonts/covered-by-your-grace-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 .contact-page {
+  margin-top: 5.6%;
   position: relative;
   container-type: inline-size;
   overflow: clip;
   background:
     linear-gradient(rgb(47 53 78 / 35%), rgb(47 53 78 / 35%)),
-    #384759 url('../assets/dumpster-contact-background.webp') center / cover no-repeat;
+    #384759 url('../assets/dumpster-contact-background.webp') center top / 100% auto no-repeat;
 }
 
 .contact-phone {
   position: absolute;
-  top: 7.65cqw;
+  top: 3cqw;
   right: 0;
   width: 21cqw;
   height: auto;
@@ -18,13 +27,14 @@
 
 .contact-title {
   position: relative;
-  margin: 0;
+  margin-top: -4%;
   padding: 2.8cqw 13.2cqw 0 0;
   color: var(--brand-blue);
-  font: 400 13.8889cqw / 1.06 'Rubik Burned', sans-serif;
+  font: 400 20cqw / 1.06 'Covered By Your Grace', sans-serif;
   letter-spacing: 0;
+  line-height: 0.7;
   text-align: right;
-  text-shadow: 0.025em 0.025em #394759;
+  text-shadow: 0.05em 0.026em #0E2D52;
 }
 
 .contact-form {
