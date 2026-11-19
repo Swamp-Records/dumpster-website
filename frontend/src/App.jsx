@@ -21,7 +21,7 @@ function App() {
         <div className="nav-links">
           <NavLink to="/about" end>about</NavLink>
           <NavLink to="/shows" end>shows</NavLink>
-          {/* <NavLink to="/press-kit" end>epk</NavLink> - removing this page for now*/}
+          <NavLink to="/press-kit" end>epk</NavLink>
           <NavLink to="/contact" end>contact</NavLink>
         </div>
       </nav>
@@ -31,7 +31,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/press-kit" element={<PressKit />} /> */}
+        <Route path="/press-kit" element={<PressKit />} />
         <Route path="/shows" element={<Shows />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
