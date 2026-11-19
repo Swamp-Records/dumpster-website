@@ -1,0 +1,195 @@
+.shows-page {
+  position: relative;
+  min-height: 100vh;
+  background-color: #4D4639;
+}
+
+.shows-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/paper_background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+
+  opacity: 0.75;
+
+  z-index: 0;
+}
+
+.shows-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.shows-header {
+  padding-top: 10%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.shows-header h1 {
+  margin: 0;
+
+  color: #718daf;
+
+  font-family: 'Rubik Burned', sans-serif;
+  font-size: clamp(70px, 11vw, 160px);
+  font-weight: 400;
+
+  text-shadow: 4px 5px #1d2126;
+}
+
+.shows-header p {
+  margin-top: 80px;
+
+  color: #4c4337;
+
+  font-family: var(--typewriter);
+  font-size: clamp(14px, 2vw, 24px);
+}
+
+.poster-wall {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: clamp(25px, 3vw, 45px);
+
+  align-items: start;
+  padding-inline: 60px;
+
+
+  margin-bottom: 40px;
+}
+
+.poster-card {
+  position: relative;
+
+  width: 80%;
+  margin-inline: auto;
+
+  padding: 8px;
+
+  background: #f4f0e7;
+
+  box-shadow: 8px 10px 18px rgb(0 0 0 / 35%);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.poster-card img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+/* tape */
+.poster-card::before {
+  content: '';
+
+  position: absolute;
+  z-index: 2;
+
+  top: -18px;
+  left: 50%;
+
+  width: 85px;
+  height: 38px;
+
+  background-image: url('/tape.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.poster-card:nth-child(even)::before {
+  transform: translateX(-50%) rotate(4deg);
+}
+
+/* different vertical positions */
+
+.poster-card:nth-child(1) {
+  margin-top: 5px;
+}
+
+.poster-card:nth-child(2) {
+  margin-top: 35px;
+}
+
+.poster-card:nth-child(3) {
+  margin-top: 15px;
+}
+
+.poster-card:nth-child(4) {
+  margin-top: 45px;
+}
+
+.poster-card:nth-child(5) {
+  margin-top: 10px;
+}
+
+.poster-card:nth-child(6) {
+  margin-top: 30px;
+}
+
+.poster-card:nth-child(7) {
+  margin-top: 20px;
+}
+
+.poster-card:nth-child(8) {
+  margin-top: 50px;
+}
+
+.poster-card:nth-child(9) {
+  margin-top: 12px;
+}
+
+/* slight rotations */
+
+.tilt-left {
+  transform: rotate(-3deg);
+}
+
+.tilt-right {
+  transform: rotate(3deg);
+}
+
+.tilt-small-left {
+  transform: rotate(-1.5deg);
+}
+
+.tilt-small-right {
+  transform: rotate(1.5deg);
+}
+
+.poster-card:hover {
+  z-index: 5;
+
+  transform: rotate(0deg) scale(1.04);
+
+  box-shadow: 12px 16px 28px rgb(0 0 0 / 45%);
+}
+
+@media (max-width: 900px) {
+  .poster-wall {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .poster-wall {
+    grid-template-columns: 1fr;
+  }
+
+  .poster-card {
+    width: 88%;
+    max-width: 340px;
+  }
+}
