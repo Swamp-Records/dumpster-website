@@ -52,7 +52,7 @@
 .epk-hero-copy h1 {
   margin: 0.06em 0;
   color: var(--epk-blue);
-  font: 400 clamp(70px, 15cqw, 210px) / 0.95 'Rubik Burned', sans-serif;
+  font: 400 clamp(70px, 15cqw, 210px) / 0.95 var(--typewriter);
   letter-spacing: 0;
   text-shadow: 0.025em 0.035em #253146;
 }
