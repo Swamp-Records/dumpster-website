@@ -1,4 +1,292 @@
+@font-face {
+  font-family: 'Covered By Your Grace';
+  src: url('../assets/fonts/covered-by-your-grace-regular.ttf')
+    format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+/* WHOLE PAGE */
+
 .about-page {
+  position: relative;
+  min-height: 100vh;
+
+  padding: 130px 6vw 120px;
+
+  background-color: #718daf;
+
+  overflow: hidden;
+}
+
+
+/* PAPER TEXTURE */
+
+.about-page::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../assets/paper_background.png');
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: repeat-y;
+
+  opacity: 0.8;
+
+  z-index: 0;
+}
+
+
+/* KEEP CONTENT ABOVE BACKGROUND */
+.about-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* TITLE */
+.about-header {
+  margin-bottom: 70px;
+
+  text-align: center;
+}
+
+.about-title {
+  margin: 0;
+
+  color: var(--brand-blue);
+
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: clamp(70px, 16vw, 200px);
+  font-weight: 400;
+  line-height: 0.9;
+
+  text-align: center;
+
+  text-shadow: 0.05em 0.026em #0E2D52;
+}
+
+.about-header p {
+  margin-top: 15px;
+
+  color: #252936;
+
+  font-family: var(--typewriter);
+  font-size: clamp(16px, 2vw, 26px);
+}
+
+
+/* MAIN COLLAGE */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 60px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  align-items: start;
+}
+
+
+/* PHOTOS */
+
+.about-photo {
+  position: relative;
+
+  padding: 10px;
+
+  background: #f3efe5;
+
+  box-shadow: 10px 12px 20px rgb(0 0 0 / 30%);
+}
+
+.about-photo-vertical {
+  width: 85%;
+  justify-self: end;
+  transform: rotate(-2deg);
+}
+
+.about-bio {
+  transform: rotate(1.5deg);
+}
+
+.about-photo-wide {
+  grid-column: 1 / -1;
+
+  width: 75%;
+  justify-self: center;
+
+  margin-top: 25px;
+
+  transform: rotate(-1deg);
+}
+
+.about-photo img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* FIRST PHOTO */
+.about-photo-one {
+  transform: rotate(-2deg);
+}
+
+
+/* SECOND PHOTO */
+.about-photo-two {
+  grid-column: 2;
+
+  transform: rotate(2.5deg);
+}
+
+
+/* TAPE */
+.about-photo::before {
+  content: '';
+
+  position: absolute;
+
+  top: -22px;
+  left: 50%;
+
+  width: 100px;
+  height: 45px;
+
+  background-image: url('../assets/tape.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: translateX(-50%) rotate(-3deg);
+
+  z-index: 2;
+}
+
+.about-photo-two::before {
+  transform: translateX(-50%) rotate(4deg);
+}
+
+
+/* BIO PAPER */
+.about-bio {
+  position: relative;
+
+  padding: clamp(25px, 4vw, 50px);
+
+  margin-top: 8vh;
+
+  background: #f0ece1;
+
+  color: #394759;
+
+  font-family: var(--typewriter);
+  font-size: clamp(16px, 1.5vw, 22px);
+  line-height: 1.4;
+
+  text-align: left;
+
+  box-shadow: 8px 10px 18px rgb(0 0 0 / 25%);
+
+  transform: rotate(1.5deg);
+}
+
+
+/* LITTLE TAPE ON BIO */
+.about-bio::before {
+  content: '';
+
+  position: absolute;
+
+  top: -22px;
+  left: 45%;
+
+  width: 95px;
+  height: 42px;
+
+  background-image: url('../assets/tape.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  transform: translateX(-50%) rotate(-5deg);
+}
+
+
+.about-note {
+  grid-column: 2;
+  justify-self: start;
+
+  margin-top: -30%;
+  margin-left: 10%;
+
+  color: #4D4639;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: clamp(26px, 7vw, 60px);
+  line-height: 1.05;
+
+  transform: rotate(3deg);
+}
+
+/* MOBILE */
+@media (max-width: 750px) {
+
+  .about-page {
+    padding: 110px 25px 80px;
+  }
+
+  .about-header {
+    margin-bottom: 50px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .about-photo-one,
+  .about-photo-two,
+  .about-bio {
+    grid-column: 1;
+  }
+
+  .about-photo {
+    width: 90%;
+
+    margin-inline: auto;
+  }
+
+  .about-photo-one {
+    transform: rotate(-1.5deg);
+  }
+
+  .about-photo-two {
+    transform: rotate(1.5deg);
+  }
+
+  .about-bio {
+    transform: rotate(-1deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* .about-page {
   container-type: inline-size;
 }
 
@@ -84,4 +372,4 @@
     font-size: clamp(20px, 4.8cqw, 26px);
     line-height: 1.25;
   }
-}
+} */
