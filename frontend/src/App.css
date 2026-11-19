@@ -39,7 +39,14 @@
   }
 }
 
+main {
+  padding-top: clamp(58px, 6.65vw, 96px);
+}
+
 .nav-bar {
+  position: fixed;
+  z-index: 1000;
+  width: 100%; 
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,7 +81,7 @@
   align-items: center;
   min-height: 44px;
   color: var(--brand-blue);
-  font-size: clamp(15px, 2.5vw, 36px);
+  font-size: clamp(13px, 1.8vw, 24px);
   font-weight: 400;
   line-height: 1;
   text-decoration: none;
