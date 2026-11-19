@@ -5,7 +5,7 @@
   container-type: inline-size;
   min-height: clamp(420px, 58cqw, 760px);
   box-sizing: border-box;
-  padding: clamp(28px, 5.5cqw, 80px) clamp(20px, 8.33cqw, 120px);
+  padding: clamp(56px, 8cqw, 112px) clamp(20px, 8.33cqw, 120px);
   background:
     linear-gradient(rgb(67 80 87 / 82%), rgb(67 80 87 / 82%)),
     #435057 url('../assets/stardust-background.webp') center / cover;
@@ -31,7 +31,7 @@
 .shows-header h1 {
   margin: 0;
   color: var(--brand-blue);
-  font: 400 clamp(54px, 9cqw, 130px) / 0.9 'Rubik Burned', sans-serif;
+  font: 400 clamp(54px, 9cqw, 130px) / 0.9 var(--typewriter);
   text-shadow: 0.025em 0.025em #394759;
 }
 
