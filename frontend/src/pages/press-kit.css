@@ -1,0 +1,196 @@
+.epk-page {
+  --epk-blue: #718daf;
+  --epk-ink: #253146;
+  container-type: inline-size;
+  color: #e8e8e8;
+  font-family: var(--typewriter);
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.epk-hero {
+  position: relative;
+  display: grid;
+  min-height: clamp(340px, 54cqw, 700px);
+  overflow: hidden;
+  background: #435057;
+}
+
+.epk-hero::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(29 38 47 / 72%), transparent 92%),
+    linear-gradient(0deg, rgb(29 38 47 / 48%), transparent 75%);
+  content: '';
+}
+
+.epk-hero-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 37%;
+}
+
+.epk-hero-copy {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  padding: clamp(28px, 6cqw, 86px) clamp(20px, 8.33cqw, 120px);
+  text-shadow: 0 2px 8px rgb(0 0 0 / 55%);
+}
+
+.epk-hero-copy p,
+.epk-hero-copy span {
+  display: block;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(15px, 1.7cqw, 24px);
+}
+
+.epk-hero-copy h1 {
+  margin: 0.06em 0;
+  color: var(--epk-blue);
+  font: 400 clamp(70px, 15cqw, 210px) / 0.95 'Rubik Burned', sans-serif;
+  letter-spacing: 0;
+  text-shadow: 0.025em 0.035em #253146;
+}
+
+.epk-hero-copy span {
+  color: #e5e5e5;
+}
+
+.epk-profile {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 0.8fr);
+  gap: clamp(28px, 6cqw, 88px);
+  padding: clamp(36px, 7cqw, 100px) clamp(20px, 8.33cqw, 120px);
+  background:
+    linear-gradient(rgb(67 80 87 / 94%), rgb(67 80 87 / 94%)),
+    #435057 url('../assets/stardust-background.webp') center / cover;
+}
+
+.epk-eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--epk-blue);
+  font-size: clamp(14px, 1.4cqw, 20px);
+  text-transform: uppercase;
+}
+
+.epk-bio h2,
+.epk-contact h2 {
+  margin: 0 0 1rem;
+  color: #fff;
+  font: 400 clamp(30px, 4cqw, 56px) / 1 var(--typewriter);
+  letter-spacing: 0;
+}
+
+.epk-bio > p:last-child {
+  max-width: 760px;
+  margin: 0;
+  color: #e3e3e3;
+  font-size: clamp(17px, 1.55cqw, 22px);
+  line-height: 1.6;
+}
+
+.epk-facts {
+  align-self: center;
+  margin: 0;
+  border-top: 2px solid var(--epk-blue);
+}
+
+.epk-facts div {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(201 202 202 / 42%);
+}
+
+.epk-facts dt {
+  margin-bottom: 0.35rem;
+  color: var(--epk-blue);
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.epk-facts dd {
+  margin: 0;
+  color: #f3f3f3;
+  font-size: clamp(16px, 1.3cqw, 19px);
+  line-height: 1.4;
+}
+
+.epk-group-photo {
+  margin: 0;
+  background: #253146;
+}
+
+.epk-group-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.epk-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: clamp(36px, 6cqw, 84px) clamp(20px, 8.33cqw, 120px);
+  background: #e4e4e4;
+  color: var(--epk-ink);
+}
+
+.epk-contact h2 {
+  color: var(--epk-ink);
+}
+
+.epk-email {
+  color: #174f91;
+  font-size: clamp(17px, 1.5cqw, 22px);
+  overflow-wrap: anywhere;
+}
+
+.epk-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.epk-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 0.3em 1em;
+  border: 3px solid #174f91;
+  border-radius: 999px;
+  color: #174f91;
+  font-size: clamp(16px, 1.4cqw, 20px);
+  text-decoration: none;
+}
+
+.epk-links a:hover {
+  background: #174f91;
+  color: #fff;
+}
+
+.epk-page a:focus-visible {
+  outline: 3px solid #174f91;
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .epk-profile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .epk-contact {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .epk-hero-copy h1 {
+    font-size: 17cqw;
+  }
+}
